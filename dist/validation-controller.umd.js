@@ -477,12 +477,17 @@
         var _this$attributes$get2 = this.attributes.get(attribute),
             value = _this$attributes$get2.value;
 
-        return [defineProperty({}, attribute, value), defineProperty({}, attribute, this.rules[attribute])];
+        return [defineProperty({}, attribute, value), defineProperty({}, attribute, this.rules[attribute]), this.validatorOptions || {}];
       }
     }, {
       key: "rules",
       get: function get() {
         return this.controller.constructor.rules;
+      }
+    }, {
+      key: "validatorOptions",
+      get: function get() {
+        return this.controller.constructor.validatorOptions;
       }
     }, {
       key: "errors",
